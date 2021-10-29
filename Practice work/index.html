@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  </head>
+  <body>
+    <div class="container1">
+      <div class="imgs">
+        <img id="imgwom" src="images/illustration-woman-online-desktop.svg" alt="img">
+        <img id="imgshadow" src="images/bg-pattern-desktop.svg" alt="img2">
+        <img id="imgbox" src="images/illustration-box-desktop.svg" alt="img3">
+
+      </div>
+
+      <div class="faq">
+        <h1 id="title">FAQ</h1>
+
+        <div class="container2">
+          <div class="question">
+            <p>  How many team members can I invite?</p>
+            <img class="arrow"  src="images/icon-arrow-down.svg" alt="icon">
+          </div>
+          <div class="answer">
+            <p>You can invite up to 2 additional users on the Free plan. There is no limit on
+               team members for the Premium plan.</p>
+          </div>
+        </div>
+
+        <div class="container2">
+          <div class="question">
+            <p>  What is the maximum file upload size?</p>
+            <img class="arrow" src="images/icon-arrow-down.svg" alt="icon">
+          </div>
+          <div class="answer">
+            <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+          </div>
+        </div>
+
+        <div class="container2">
+          <div class="question">
+            <p>How do I reset my password?</p>
+            <img class="arrow"  src="images/icon-arrow-down.svg" alt="icon">
+          </div>
+          <div class="answer">
+            <p>Click “Forgot password” from the login page or “Change password” from your profile page.
+             A reset link will be emailed to you.</p>
+          </div>
+        </div>
+
+        <div class="container2">
+          <div class="question">
+            <p>Can I cancel my subscription?</p>
+            <img class="arrow"  src="images/icon-arrow-down.svg" alt="icon">
+          </div>
+          <div class="answer">
+            <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
+          </div>
+        </div>
+
+        <div class="container2">
+          <div class="question">
+            <p>Do you provide additional support?</p>
+            <img class="arrow" src="images/icon-arrow-down.svg" alt="icon">
+          </div>
+          <div class="answer">
+            <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Aliyeva Aigerim</a> & <a href="#">Bauyrzhan Dias</a>.
+    </div>
+
+
+
+    <script>
+      let accord = document.getElementsByClassName("container2");
+
+        for (let i = 0; i < accord.length; i++) {
+          accord[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            let answer = this.lastElementChild;
+            let question = this.firstElementChild;
+            let arrow = this.children[0].children[1];
+            if (answer.style.display === "block") {
+              answer.style.display = "none";
+              arrow.style.transform = "rotate(0deg)";
+            }
+            else {
+              answer.style.display = "block";
+              arrow.style.transform = "rotate(180deg)";
+            }
+          });
+        }
+    </script>
+
+  </body>
+</html>
